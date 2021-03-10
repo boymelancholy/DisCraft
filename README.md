@@ -1,6 +1,6 @@
 # DisCraft
-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/boymelancholy/DisCraft/blob/master/LICENSE)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/boymelancholy/DisCraft)
+![GitHub](https://img.shields.io/github/license/boymelancholy/DisCraft?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/boymelancholy/DisCraft?style=for-the-badge)
   
 Reverting item which crafted!
 
