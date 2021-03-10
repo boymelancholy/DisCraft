@@ -61,20 +61,22 @@ class RecipeAnalyzer(private val item: ItemStack) {
      *   before = {a:{ItemStack(IRON_INGOT, 1)}, b:{ItemStack(IRON_INGOT, 1)}, c:{ItemStack(STICK, 1)}}
      *   after = {ItemStack(IRON_INGOT, 2), ItemStack(STICK, 1)}
      */
+    @Suppress("UselessCallOnCollection")
     private fun Map<Char, ItemStack>.summarize(): Collection<ItemStack?> {
-        val materials = this.map{ it.value }
+        val materials = this
+            .map{ it.value }
+            .filterNotNull()
         if (materials.isNotEmpty()) {
             val newIngredients = mutableListOf<ItemStack>()
-            this.forEach loop@ { item ->
-                if (item !is ItemStack) return@loop
-                if (!newIngredients.contains(item)) {
-                    newIngredients.add(item)
+            materials.forEach { material ->
+                if (!newIngredients.contains(material)) {
+                    newIngredients.add(material)
                 }
             }
-            newIngredients.forEach { item ->
-                if (materials.contains(item)) {
-                    val count = materials.count { it.type == item.type }
-                    item.amount = count
+            newIngredients.forEach { itemStack ->
+                if (materials.contains(itemStack)) {
+                    val count = materials.count { it.type == itemStack.type }
+                    itemStack.amount = count
                 }
             }
             return newIngredients
