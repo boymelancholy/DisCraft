@@ -58,7 +58,7 @@ class RecipeAnalyzer(private val item: ItemStack) {
      * ShapeListの状態から、同じアイテムの素材をまとめる
      * Combine the material parts of the same item from the state of ShapeList.
      * e.g.
-     *   before = {a:{ItemStack(IRON_INGOT, 1)}, a:{ItemStack(IRON_INGOT, 1)}, a:{ItemStack(STICK, 1)}}
+     *   before = {a:{ItemStack(IRON_INGOT, 1)}, b:{ItemStack(IRON_INGOT, 1)}, c:{ItemStack(STICK, 1)}}
      *   after = {ItemStack(IRON_INGOT, 2), ItemStack(STICK, 1)}
      */
     private fun Map<Char, ItemStack>.summarize(): Collection<ItemStack?> {
