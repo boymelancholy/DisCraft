@@ -6,13 +6,22 @@ import org.bukkit.inventory.ShapedRecipe
 import org.bukkit.Bukkit
 import org.bukkit.NamespacedKey
 import org.bukkit.inventory.ItemStack
-import org.bukkit.plugin.java.JavaPlugin
 
-
+/**
+ * レシピの操作を主にするクラス
+ * Class for mainly manipulates recipes.
+ *
+ * @author boymelancholy
+ */
 class RecipeThinker {
-
     companion object {
 
+        private val chars: List<Char> = ('A'..'I').toList()
+
+        /**
+         * レシピの登録
+         * Register new recipe
+         */
         fun register(recipes: Collection<RecipeBlueprint>) {
             recipes.forEach {
                 if (it.getCount() in 1..64) {
@@ -46,8 +55,10 @@ class RecipeThinker {
             }
         }
 
-        private val chars: List<Char> = ('A'..'I').toList()
-
+        /**
+         * めにめにぷろせす
+         * Lots of process.
+         */
         private fun getRecipeData(recipeBlueprint: RecipeBlueprint): RecipeData {
             val upper = mutableListOf<Char>()
             val middle = mutableListOf<Char>()
@@ -78,6 +89,10 @@ class RecipeThinker {
         }
     }
 
+    /**
+     * レシピ追加時に使用しやすいデータ型に落とし込む
+     * Putting it into a data type that is easy to use when adding recipes
+     */
     data class RecipeData(
         val itemMap: MutableMap<Char, Material>,
         val upperShape: String,
