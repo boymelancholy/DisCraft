@@ -16,6 +16,13 @@ Don't mind about waste items anymore by this plugin!
  2. Do sneaking.
  3. Tap the Workbench block with **LEFT** click.
  4. Look at your inventory.
+
+## Extra recipe
+<img src="https://user-images.githubusercontent.com/50545243/110565633-1e63d700-8192-11eb-9bc4-7c351018ebd3.png" width="150" height="75" />
+
+- KnockBackStick
+  - KB level 4
+
 <!--
 
 　  
